@@ -19,7 +19,8 @@ test1 = float(insulin.count("y"))
 
 print(test1)
 
-seqCount = {x: float(insulin.count(x)) for x in ['y','c','k','h','r','d','e']}
+seqCount = {aminoAcid: float(insulin.count(aminoAcid)) \
+for aminoAcid in ['y','c','k','h','r','d','e']}
 pH = 0
 while pH <= 14:
     firstCharge = sum({x: ((seqCount[x]*(10**pKR[x]))/((10**pH)+(10**pKR[x]))) \
