@@ -3,13 +3,30 @@ def getDoubleAphabet(alphabet):
     return doubleAlphabet
 
 def getMessage():
-    stringToEncrypt = input("Please enter a message to encrypt: ")
-    return stringToEncrypt
+    while True:
+        stringToEncrypt = input("Please enter a message to encrypt: ")
+        if bool(stringToEncrypt):
+            return stringToEncrypt
+        else:
+            continue
     
 def getCipherKey():
-    shiftAmount = input("Please enter a key (whole number from 1-25): ")
-    return shiftAmount
-    
+    while True:
+        shiftAmount = input("Please enter a key (whole number from 1-25): ")
+        if bool(shiftAmount) and shiftAmount.isnumeric() and 1 <= int(shiftAmount) <= 25:
+             return shiftAmount
+        else:
+            continue    
+"""
+        if bool(shiftAmount):
+            elif :
+                print("Ingrese un Numero: ")
+            if shiftAmount.isnumeric():
+                if 1 <= int(shiftAmount) <= 25:
+                    return shiftAmount
+        else:
+            continue
+"""  
     
 def encryptMessage(message, cipherKey, alphabet):
     encryptedMessage = ""
@@ -29,7 +46,7 @@ def decryptMessage(message, cipherKey, alphabet):
     return encryptMessage(message, decryptKey, alphabet)
     
 def runCaesarCipherProgram():
-    myAlphabet="ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    myAlphabet="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     print(f'Alphabet: {myAlphabet}')
     myAlphabet2 = getDoubleAphabet(myAlphabet)
     print(f'Alphabet2: {myAlphabet2}')
