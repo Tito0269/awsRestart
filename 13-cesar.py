@@ -13,20 +13,16 @@ def getMessage():
 def getCipherKey():
     while True:
         shiftAmount = input("Please enter a key (whole number from 1-25): ")
-        if bool(shiftAmount) and shiftAmount.isnumeric() and 1 <= int(shiftAmount) <= 25:
-             return shiftAmount
-        else:
-            continue    
-"""
-        if bool(shiftAmount):
-            elif :
-                print("Ingrese un Numero: ")
-            if shiftAmount.isnumeric():
-                if 1 <= int(shiftAmount) <= 25:
-                    return shiftAmount
-        else:
+        if not bool(shiftAmount):
+            print("Enter a value...")
             continue
-"""  
+        elif not shiftAmount.isnumeric():
+            print("Enter a number...")
+            continue
+        elif not 1 <= int(shiftAmount) <= 25:
+            print("Enter a number between 1 and 25")
+            continue
+        return shiftAmount
     
 def encryptMessage(message, cipherKey, alphabet):
     encryptedMessage = ""
